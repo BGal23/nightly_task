@@ -1,10 +1,10 @@
+import ModalWindow from "./components/ModalWindow/ModalWindow";
+
 const App = () => {
   return (
-    <>
-      <p className="text-green-500">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="flex justify-center items-center h-screen">
+      <ModalWindow />
+    </div>
   );
 };
 
