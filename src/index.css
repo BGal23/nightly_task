@@ -5,6 +5,10 @@
 :root {
   --background-color: #010514;
   --main-font-color: #f7f7f7;
+  --color-negative: #d2585840;
+  --color-positive: #5ab88b40;
+  --font-negative: #f08282;
+  --font-positive: #70d1a3;
 
   background: var(--background-color);
   color: var(--main-font-color);
