@@ -1,5 +1,6 @@
-Recruitment task of creating a token display and search module.
-I downloaded the token icons from some free website and generated the name and the rest randomly.
+Recruitment task of creating a token display and search module.</br>
+I downloaded the token icons from some free website and generated the name and the rest randomly.</br>
+Sorry, but I ran out of time to initiate a storybook.</br>
 
 You can visit the website at the link:
 

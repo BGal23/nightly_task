@@ -16,8 +16,8 @@ const ModalToken: React.FC<ITokenProps> = ({ tokenData }) => {
     <Ripples
       during={1600}
       placeholder={undefined}
-      // onPointerEnterCapture={undefined}
-      // onPointerLeaveCapture={undefined}
+      onPointerEnterCapture={() => {}} // Temporary bug fix
+      onPointerLeaveCapture={() => {}} // Temporary bug fix
       className="mb-2 rounded-lg"
     >
       <button className="h-16 w-[328px] bg-token-color flex justify-between items-center px-4 py-2">
