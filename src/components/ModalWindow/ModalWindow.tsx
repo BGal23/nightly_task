@@ -1,14 +1,21 @@
 import ModalInput from "../ModalInput/ModalInput";
 import ModalToken from "../ModalToken/ModalToken";
-import tokens from "../../assets/tokens.json";
-import Ripples from "react-ripples";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import arrow from "../../images/svg/arrow.svg";
+import createTokens from "../../lib/createTokens";
+import { IToken } from "../../types/token";
 
 const ModalWindow = () => {
   const [filter, setFilter] = useState("");
+  const [tokenArray, setTokenArray] = useState<IToken[]>([]);
+  const TOTAL_TOKEN_NUMBER = 1000; //you can change the number of generated tokens
 
-  const filteredTokens = tokens.filter(
+  useEffect(() => {
+    const tokens = createTokens(TOTAL_TOKEN_NUMBER);
+    setTokenArray(tokens);
+  }, []);
+
+  const filteredTokens = tokenArray.filter(
     (token) =>
       token.name.toLowerCase().includes(filter.toLowerCase()) ||
       token.symbol.toLowerCase().includes(filter.toLowerCase())
@@ -17,20 +24,12 @@ const ModalWindow = () => {
   return (
     <div className="w-[360px] h-[544px] border border-secondary-color bg-primary-color rounded-xl flex flex-col">
       <div className="flex flex-row justify-between h-14 p-4 border-b border-secondary-color items-center after:content-[''] after:block after:w-8">
-        <Ripples
-          during={1500}
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
-          className="rounded-full"
+        <button
+          type="button"
+          className="w-8 h-8 rounded-full bg-secondary-color/50 flex justify-center items-center transition-all hover:scale-110"
         >
-          <button
-            type="button"
-            className="w-8 h-8 rounded-full bg-secondary-color/50 flex justify-center items-center transition-all hover:scale-110"
-          >
-            <img src={arrow} alt="" />
-          </button>
-        </Ripples>
+          <img src={arrow} alt="" />
+        </button>
         <h3 className="text-center">Select a token</h3>
       </div>
 
